@@ -5,15 +5,17 @@
   organisation of styles.
 </p>
 
-<h2>Contents</h2>
-<ul>
-  <li>Basic syntax and definitions</li>
-  <li>The cascade &amp; specificity</li>
-  <li>Semantic class naming</li>
-  <li>Organisation methodologies (BEM, SMACSS, OOCSS)</li>
-  <li>Pre‑processors (Sass, Less, Stylus, PostCSS)</li>
-  <li>Key topics for further study</li>
-</ul>
+## Table of Contents
+
+1. **Syntax & Definitions** – Basic anatomy of a CSS rule
+2. **Box Model & Display** – Block vs. inline elements, margins, borders, padding
+3. **Selectors & Specificity** – Element, class, ID, compounding, and the cascade
+4. **The Cascade** – Order, specificity, and the dreaded `!important`
+5. **Placing CSS** – External style‑sheets, internal `<style>`, inline styles
+6. **Semantic CSS / Naming** – Why meaningful class names matter
+7. **Pre‑processors** – Sass, Less, Stylus, PostCSS & their killer features
+8. **Live‑Coding Demos** – Box‑model inspection, responsive units, overrides
+9. **Things to Google Next** – Pseudo‑elements, `calc()`, Flexbox, Grid, etc.
 
 <h2>Project layout</h2>
 <pre><code>.

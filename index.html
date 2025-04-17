@@ -68,17 +68,7 @@
 
     <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
-      <section>
-        <p>This slide intentionally left blank.</p>
-        <ul>
-          <li>turn off hot corners</li>
-          <li>start dev server for demo</li>
-          <li>get my physical notes out for running through the live coding</li>
-        </ul>
-        <aside class="notes">
-          turn off hot corners!<br>
-        </aside>
-      </section>
+
 
       <section>
         <h1>CSS Fundamentals</h1>
@@ -91,22 +81,21 @@
       <section>
         <h3>What We Will Cover</h3>
         <ul>
-          <li class="fragment">Syntax & Definitions</li>
-          <li class="fragment">The Cascade</li>
-          <li class="fragment">Semantic CSS</li>
-          <li class="fragment">Methodologies</li>
-          <li class="fragment">Preprocessors</li>
-          <li class="fragment">Things to Google</li>
+          <li class="fragment">Syntax & Definitions</li>
+          <li class="fragment">The Casscade</li>
+          <li class="fragment">Placing CSS (external / internal / inline)</li>
+          <li class="fragment">Pre‑processors</li>
+          <li class="fragment">Semantic CSS</li>
+          <li class="fragment">Things to Google</li>
         </ul>
         <aside class="notes">
-          En esta presentación vamos a cubrir varios aspectos clave de CSS.
-          Primero, veremos la sintaxis y las definiciones básicas para entender cómo funciona el lenguaje.
-          Luego pasaremos a la cascada, que es el mecanismo que usa CSS para decidir qué estilos aplicar.
-          Después hablaremos sobre la importancia de usar nombres semánticos en CSS y cómo esto mejora la mantenibilidad
-          del código.
-          También exploraremos metodologías populares como BEM o SMACSS.
-          Más adelante hablaremos de preprocesadores como Sass, que nos ayudan a escribir CSS más eficiente.
-          Y por último, daremos una lista de cosas útiles para seguir investigando por cuenta propia.
+          En esta sesión empezarè con los fundamentos de la sintaxis de CSS,
+          profundizarè en cómo funciona realmente la cascada y
+          la especificidad,
+          s revisaré las tres formas de vincular CSS al HTML
+          hablaré delos pre‑procesadores
+          y cerrarés con por qué es importante usar nombres semánticos
+          y temas recomendado para seguir aprendiendo.
         </aside>
 
       </section>
@@ -1184,155 +1173,9 @@ h4 {
       </section>
 
 
+      <!-- final slides -->
 
-      <!-- Semantics -->
-      <section>
-        <h1>Semantics</h1>
-        <p>Aka: Naming stuff.</p>
-        <aside class="notes">
-          En esta sección vamos a hablar de la importancia de nombrar correctamente las cosas, lo que en programación se
-          llama "semántica".
-          Ponerle nombres significativos a clases y elementos nos ayuda a que el código sea más legible, mantenible y
-          reutilizable.
-        </aside>
 
-      </section>
-      <section>
-        <h3>What would you label this?</h3>
-        <div class="c-grid">
-          <div>
-            <img src="images/toy-box.jpg">
-          </div>
-          <div>
-            <ul>
-              <li class="fragment">"big"</li>
-              <li class="fragment">"box"</li>
-              <li class="fragment">"white"</li>
-              <li class="fragment">"100cms"</li>
-              <li class="fragment" style="color: green">"toys"</li>
-            </ul>
-          </div>
-        </div>
-        <aside class="notes">
-          Aquí el objetivo es mostrar cómo un mismo objeto puede ser descrito de muchas formas: su tamaño, color, forma
-          o función.
-          Pero la opción más útil y clara suele ser la que describe qué es realmente — en este caso, una caja de
-          juguetes.
-          Lo mismo aplica en CSS: nuestras clases deben reflejar el propósito, no solo el estilo visual.
-        </aside>
-
-      </section>
-
-      <section>
-        <h3>What would you label this?</h3>
-        <blockquote class="important_quote">There are only two hard things in computer science: cache invalidation, and
-          naming things. -Phil Carlton</blockquote>
-        <aside class="notes">
-          "Solo hay dos cosas difíciles en la informática: la invalidación de caché y ponerle nombre a las cosas."
-          — Phil Carlton
-          Esta cita famosa nos recuerda que una de las tareas más difíciles en programación es nombrar cosas
-          correctamente.
-          El nombre que elijamos tiene un gran impacto en la comprensión del código por parte de otros desarrolladores…
-          ¡o de nosotros mismos en el futuro!
-        </aside>
-
-      </section>
-
-      <section>
-        <h3>NO.</h3>
-        <pre><code class="css">
-.floatRight {
-   float: right
-}
-.floatLeft {
-   float: left
-}
-.Percent70Width {
-   width: 70%
-}
-.Percent20Width {
-   width: 25% /* WHAT?! */
-}
-.Height200Px {
-   height: 200px
-}
-.Height230Px {
-   height: 230px
-}
-.clear {
-   clear: both
-}
-.textarea {
-   height: 100px;
-   width: 100%
-}
-.displayNone {
-   display: none
-}
-#scannerImagePlaceholderDiv {
-   float: left;
-   display: block;
-   width: 250px;
-   height: 300px
-}
-.marginBottom30 {
-   margin-bottom: 30px
-}
-.Height40Px {
-   height: 55px /* WHY?! */
-}
-.centerText {
-   text-align: center
-}
-.bulkEditSelectionTable {
-   margin-left: auto;
-   margin-right: auto
-}
-.bulkEditSelectionTable th {
-   text-align: center;
-   padding-left: 5px;
-   padding-right: 5px
-}
-.bulkEditSelectionTable td {
-   padding-left: 5px;
-   padding-right: 5px
-}
-.width40Percent {
-   width: 40%
-}
-.width46Percent {
-   width: 46%
-}
-.width10Percent {
-   width: 10%
-}
-.width11Percent {
-   width: 11%
-}
-.width38Percent {
-   width: 38%
-}
-          </code></pre>
-        <aside class="notes">
-          Este es un ejemplo de malas prácticas al nombrar clases.
-          Usar nombres como "floatRight" o "Height200Px" hace que el código sea confuso, especialmente cuando el estilo
-          cambia y el nombre ya no representa la realidad.
-          Además, algunos nombres incluso son incorrectos respecto al estilo que aplican, lo cual puede generar errores
-          difíciles de encontrar.
-        </aside>
-
-      </section>
-
-      <section>
-        <p>Name it what it <strong>IS</strong> not what it looks like.</p>
-        <aside class="notes">
-          El mensaje clave es: nombra los elementos por lo que <strong>son</strong>, no por cómo <strong>se
-            ven</strong>.
-          En lugar de llamar a una clase "azulGrande", podríamos llamarla "botónPrimario" si es su función dentro del
-          sistema.
-        </aside>
-
-      </section>
 
 
       <!-- Preprocessors -->
@@ -1519,38 +1362,159 @@ h4 {
       </section>
 
 
-
-
-
-
-
+      <!-- Semantics -->
       <section>
-        <h3>Live coding!</h3>
-        <img src="images/also-live-dangerously.jpg" alt="i also like to live dangerously"><br>
-        <a href="http://localhost:8282" target="_blank">Example!</a>
+        <h1>Semantics</h1>
+        <p>Aka: Naming stuff.</p>
         <aside class="notes">
-          <ul>
-            <li>show selectors in action</li>
-            <li>show "--secondary" override, & show in computed</li>
-            <li>cover em, rem, vw/vh</li>
-            <li>show sourcemaps</li>
-            <li>hover state toggling</li>
-          </ul>
+          En esta sección vamos a hablar de la importancia de nombrar correctamente las cosas, lo que en programación se
+          llama "semántica".
+          Ponerle nombres significativos a clases y elementos nos ayuda a que el código sea más legible, mantenible y
+          reutilizable.
         </aside>
-      </section>
-      <!-- final slides -->
-      <section>
-        <h1>More Reading</h1>
-      </section>
-      <section>
-        <h2>Methodologies</h2>
-        <ul class="spaced-out">
-          <li><b>SMACSS</b> - How to structure css to make it scale well</li>
-          <li><b>Namespacing</b> - How to write css classes to make them understandable for developers</li>
-          <li><b>OOCSS</b> - bringing object-oriented approaches into CSS</li>
 
-        </ul>
       </section>
+      <section>
+        <h3>What would you label this?</h3>
+        <div class="c-grid">
+          <div>
+            <img src="images/toy-box.jpg">
+          </div>
+          <div>
+            <ul>
+              <li class="fragment">"big"</li>
+              <li class="fragment">"box"</li>
+              <li class="fragment">"white"</li>
+              <li class="fragment">"100cms"</li>
+              <li class="fragment" style="color: green">"toys"</li>
+            </ul>
+          </div>
+        </div>
+        <aside class="notes">
+          Aquí el objetivo es mostrar cómo un mismo objeto puede ser descrito de muchas formas: su tamaño, color, forma
+          o función.
+          Pero la opción más útil y clara suele ser la que describe qué es realmente — en este caso, una caja de
+          juguetes.
+          Lo mismo aplica en CSS: nuestras clases deben reflejar el propósito, no solo el estilo visual.
+        </aside>
+
+      </section>
+
+      <section>
+        <h3>What would you label this?</h3>
+        <blockquote class="important_quote">There are only two hard things in computer science: cache invalidation, and
+          naming things. -Phil Carlton</blockquote>
+        <aside class="notes">
+          "Solo hay dos cosas difíciles en la informática: la invalidación de caché y ponerle nombre a las cosas."
+          — Phil Carlton
+          Esta cita famosa nos recuerda que una de las tareas más difíciles en programación es nombrar cosas
+          correctamente.
+          El nombre que elijamos tiene un gran impacto en la comprensión del código por parte de otros desarrolladores…
+          ¡o de nosotros mismos en el futuro!
+        </aside>
+
+      </section>
+
+      <section>
+        <h3>NO.</h3>
+        <pre><code class="css">
+.floatRight {
+ float: right
+}
+.floatLeft {
+ float: left
+}
+.Percent70Width {
+ width: 70%
+}
+.Percent20Width {
+ width: 25% /* WHAT?! */
+}
+.Height200Px {
+ height: 200px
+}
+.Height230Px {
+ height: 230px
+}
+.clear {
+ clear: both
+}
+.textarea {
+ height: 100px;
+ width: 100%
+}
+.displayNone {
+ display: none
+}
+#scannerImagePlaceholderDiv {
+ float: left;
+ display: block;
+ width: 250px;
+ height: 300px
+}
+.marginBottom30 {
+ margin-bottom: 30px
+}
+.Height40Px {
+ height: 55px /* WHY?! */
+}
+.centerText {
+ text-align: center
+}
+.bulkEditSelectionTable {
+ margin-left: auto;
+ margin-right: auto
+}
+.bulkEditSelectionTable th {
+ text-align: center;
+ padding-left: 5px;
+ padding-right: 5px
+}
+.bulkEditSelectionTable td {
+ padding-left: 5px;
+ padding-right: 5px
+}
+.width40Percent {
+ width: 40%
+}
+.width46Percent {
+ width: 46%
+}
+.width10Percent {
+ width: 10%
+}
+.width11Percent {
+ width: 11%
+}
+.width38Percent {
+ width: 38%
+}
+        </code></pre>
+        <aside class="notes">
+          Este es un ejemplo de malas prácticas al nombrar clases.
+          Usar nombres como "floatRight" o "Height200Px" hace que el código sea confuso, especialmente cuando el estilo
+          cambia y el nombre ya no representa la realidad.
+          Además, algunos nombres incluso son incorrectos respecto al estilo que aplican, lo cual puede generar errores
+          difíciles de encontrar.
+        </aside>
+
+      </section>
+
+      <section>
+        <p>Name it what it <strong>IS</strong> not what it looks like.</p>
+        <aside class="notes">
+          El mensaje clave es: nombra los elementos por lo que <strong>son</strong>, no por cómo <strong>se
+            ven</strong>.
+          En lugar de llamar a una clase "azulGrande", podríamos llamarla "botónPrimario" si es su función dentro del
+          sistema.
+        </aside>
+
+      </section>
+
+
+
+
+
 
       <section>
         <h2>Google this!</h2>
