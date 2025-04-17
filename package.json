@@ -12,7 +12,7 @@
     "start": "open ./index.html; gulp watch",
     "build": "gulp build"
   },
-  "author": "Jessica Keener <jessica.kennedy@inmar.com>",
+  "author": "Laura Ramos <Laura Ramos.kennedy@inmar.com>",
   "license": "MIT",
   "devDependencies": {
     "gulp": "^4.0.0",

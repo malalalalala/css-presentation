@@ -1,293 +1,461 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
 
-    <title>CSS Crash Course</title>
+  <title>CSS Crash Course</title>
 
-    <meta name="author" content="Jessica Keener">
+  <meta name="author" content="Jessica Keener">
 
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-    <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/simple.css" id="theme">
-    <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/simple.css" id="theme">
+  <link rel="stylesheet" href="css/custom.css">
 
-    <!-- Code syntax highlighting -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
-    <style>
-    .hljs{
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+  <style>
+    .hljs {
       background-color: #060606
     }
-    .reveal .spaced-out * + * {
+
+    .reveal .spaced-out *+* {
       margin-top: 1em;
     }
+
     .reveal .foo {
       background: #ccc;
       height: 60px;
       margin-top: 1em;
     }
+
     .foo__bar {
       background: #69c;
       height: 130px;
       z-index: 100;
       width: 230px;
     }
-    .foo--active{
+
+    .foo--active {
       position: relative;
       z-index: 10;
     }
-    </style>
+  </style>
 
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link')
+    link.rel = 'stylesheet'
+    link.type = 'text/css'
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css'
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
 
-    <!--[if lt IE 9]>
+  <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
     <![endif]-->
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <div class="reveal">
+  <div class="reveal">
 
-      <!-- Any section element inside of this container is displayed as a slide -->
-      <div class="slides">
-        <section>
-          <p>This slide intentionally left blank.</p>
-          <ul>
-            <li>turn off hot corners</li>
-            <li>start dev server for demo</li>
-            <li>get my physical notes out for running through the live coding</li>
-          </ul>
-          <aside class="notes">
-            turn off hot corners!<br>
-          </aside>
-        </section>
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+      <section>
+        <p>This slide intentionally left blank.</p>
+        <ul>
+          <li>turn off hot corners</li>
+          <li>start dev server for demo</li>
+          <li>get my physical notes out for running through the live coding</li>
+        </ul>
+        <aside class="notes">
+          turn off hot corners!<br>
+        </aside>
+      </section>
 
-        <section>
-          <h1>CSS Fundamentals</h1>
-          <h3>A Crash Course in CSS</h3>
-          <p>
-            <small>Created by <a href="http://mistersender.com">Jessica Keener</a> / <a href="http://twitter.com/mistersender">@mistersender</a></small>
-          </p>
-        </section>
-        <!-- Examples because lazy:
-          <p><code class="il">320px</code> is your new "base" size.</p>
-          <p class="fragment">This: <code class="il">@media ( min-width: 568px ) {}</code></p>
-        -->
-        <section class='c-grid'>
-          <div>
-            <figure class="c-me" style="background-image: url(images/me.jpg)">
-              Me, Jessica Keener!
-            </figure>
-          </div>
-          <div style = 'flex: calc(100% - 300px)'>
-            <h2>Who am I?</h2>
-            <ul>
-              <li>Senior Software Engineer</li>
-              <li>Specializing in UI/UX E-Comm & Mobile</li>
-              <li>Polyglot org for ~5 years</li>
-            </ul>
-          </div>
-        </section>
-        
-        <section style=" padding-top: 0;">
-          <h3>Recently Married!</h3>
-          <img src="images/things/married.jpg" alt="Married" style="margin: 0; height: 65vh" />
-          <h4>Jessica <strike>Kennedy</strike> Keener</h4>
-        </section>
+      <section>
+        <h1>CSS Fundamentals</h1>
+        <p>
+          <small>Created by <a href="https://www.linkedin.com/in/laura-ramos-agudelo/">Laura Ramos</a></small>
+        </p>
+      </section>
 
-        <section style=" padding-top: 0;">
-          <div class="c-grid" style="margin:0; max-height: 40vh;">
-            <div><img src="images/things/charlie2.jpg" alt="Favorite things" style="margin: 0;" /></div>
-            <div><img src="images/things/jonas2.jpg" alt="Favorite things" style="margin: 0;" /></div>
-          </div>
-          <div class="c-grid" style="margin:0; max-height: 40vh;">
-            <div><img src="images/things/vera_eliza2.jpg" alt="Favorite things" style="margin: 0;" /></div>
-            <div><img src="images/things/aj_japan.jpg" alt="Favorite things" style="margin: 0;" /></div>
-          </div>
-          <!-- <img src="images/things/collage.jpg" alt="Favorite things" style="margin: 0;" /> -->
-        </section>
-        
-<!-- what we'll cover? -->
-        <section>
-          <h3>What We Will Cover</h3>
-          <ul>
-            <li class="fragment">Syntax & Definitions</li>
-            <li class="fragment">The Cascade</li>
-            <li class="fragment">Semantic CSS</li>
-            <li class="fragment">Methodologies</li>
-            <li class="fragment">Preprocessors</li>
-            <li class="fragment">Things to Google</li>
-          </ul>
-        </section>
+      <!-- what we'll cover? -->
+      <section>
+        <h3>What We Will Cover</h3>
+        <ul>
+          <li class="fragment">Syntax & Definitions</li>
+          <li class="fragment">The Cascade</li>
+          <li class="fragment">Semantic CSS</li>
+          <li class="fragment">Methodologies</li>
+          <li class="fragment">Preprocessors</li>
+          <li class="fragment">Things to Google</li>
+        </ul>
+        <aside class="notes">
+          En esta presentación vamos a cubrir varios aspectos clave de CSS.
+          Primero, veremos la sintaxis y las definiciones básicas para entender cómo funciona el lenguaje.
+          Luego pasaremos a la cascada, que es el mecanismo que usa CSS para decidir qué estilos aplicar.
+          Después hablaremos sobre la importancia de usar nombres semánticos en CSS y cómo esto mejora la mantenibilidad
+          del código.
+          También exploraremos metodologías populares como BEM o SMACSS.
+          Más adelante hablaremos de preprocesadores como Sass, que nos ayudan a escribir CSS más eficiente.
+          Y por último, daremos una lista de cosas útiles para seguir investigando por cuenta propia.
+        </aside>
 
-<!-- syntax & definitions -->
-				<section>
-          <h1>Syntax & Definitions</h1>
-				</section>
-        <section>
-          <h2>CSS</h2>
-          <div class="fragment">
-            <p><strong>C</strong>ascading</p>
-            <p><strong>S</strong>tyle</p>
-            <p><strong>S</strong>heet</p>
-          </div>
-          <p class="fragment">How HTML markup should <i>Look</i></p>
-        </section>
-        <section>
-          <h2>Rules</h2>
-          <p>How CSS applies style to HTML elements</p>
-          <div class='c-grid'>
-            <div>HTML:
-              <pre><code class="html">
+      </section>
+
+      <!-- syntax & definitions -->
+      <section>
+        <h1>Syntax & Definitions</h1>
+      </section>
+      <section>
+        <h2>CSS</h2>
+        <div class="fragment">
+          <p><strong>C</strong>ascading</p>
+          <p><strong>S</strong>tyle</p>
+          <p><strong>S</strong>heet</p>
+        </div>
+        <p class="fragment">How HTML markup should <i>Look</i></p>
+        <aside class="notes">
+          o en español, Hojas de Estilo en Cascada.
+          La palabra “cascading” se refiere a cómo se aplican las reglas de estilo en orden de prioridad.
+          Básicamente, CSS le dice al navegador cómo debe lucir el contenido que escribimos en HTML.
+        </aside>
+      </section>
+      <section>
+        <h2>Rules</h2>
+        <p>How CSS applies style to HTML elements</p>
+        <div class='c-grid'>
+          <div>HTML:
+            <pre><code class="html">
 <div class="my-selector">
   This text will be green!
 </div>
               </pre></code>
-            </div>
-            <div>CSS:
-              <pre><code class="css">
+          </div>
+          <div>CSS:
+            <pre><code class="css">
 .my-selector {
   color: green;
 }
               </pre></code>
-            </div>
           </div>
-        </section>
-        <section>
-          <h2>Rule Anatomy</h2>
-          <img src="images/anatomy-of-a-css-rule.gif" alt="anatomy of a css rule">
-        </section>
+        </div>
+        <aside class="notes">
+          En CSS, las reglas definen cómo se aplica estilo a los elementos HTML.
+          En este ejemplo, estamos seleccionando un div con una clase específica y aplicando un color de texto.
+        </aside>
+      </section>
+      <section>
+        <h2>Rule Anatomy</h2>
+        <img src="images/anatomy-of-a-css-rule.gif" alt="anatomy of a css rule">
+        <aside class="notes">
+          Aquí vemos la anatomía de una regla CSS.
+          Primero tenemos el selector, que en este caso es h1, y nos dice a qué elemento HTML se aplicará el estilo.
+          Luego vienen las declaraciones, que siempre están dentro de llaves.
+          Cada declaración tiene una propiedad, como color o text-align, y un valor, como orange o center.
+          La combinación de propiedad y valor forma una declaración.
+
+          Este formato es el que vamos a usar siempre que escribamos reglas en CSS.
 
 
-        <!-- Basics of using inspector and units of measure -->
-        <section>
-          <h3>Box Model</h3>
-          Elements are generally either <code class="il">Block</code> or <code class="il">Inline</code>.
-        </section>
-        
-        <section>
-          <h3>Inline Elements</h3>
-          <p><b>Limited</b> ability to style!</p>
+        </aside>
+      </section>
+
+
+      <!-- Basics of using inspector and units of measure -->
+      <section>
+        <h3>Box Model</h3>
+        Elements are generally either <code class="il">Block</code> or <code class="il">Inline</code>.
+        <aside class="notes">
+          Antes de aplicar estilos, es importante entender cómo se comportan los elementos en la página.
+          En HTML, los elementos suelen ser de dos tipos: <strong>block</strong> o <strong>inline</strong>.
+
+        </aside>
+
+      </section>
+
+      <section>
+        <h3>Inline Elements</h3>
+        <p><b>Limited</b> ability to style!</p>
+        <ul>
+          <li><code class="il">span</code></li>
+          <li><code class="il">b</code>, <code class="il">i</code></li>
+          <li>etc...</li>
+        </ul>
+
+        <p>This is a sentence with an <span style="background: yellow;">inline element</span> in it.</p>
+
+        <aside class="notes">
+          Los elementos <strong>inline</strong> no comienzan en una nueva línea, se mantienen en la misma línea del
+          texto.
+          Solo ocupan el espacio que necesitan según su contenido.
+          No se les puede aplicar fácilmente ancho, alto ni márgenes o paddings verticales.
+          Algunos ejemplos son: <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>,
+          <code>&lt;i&gt;</code>.
+          Son ideales para aplicar estilo a palabras o frases específicas dentro de un párrafo.
+        </aside>
+
+      </section>
+
+      <section>
+        <h3>Block Elements</h3>
+        <p>Style everything!</p>
+        <img src="images/box-model.png" alt="box model">
+        <!-- In CSS, the term "box model" is used when talking about design and layout.
+        It consists of: content, padding, borders and margins. -->
+
+
+
+        <div style="background: lightblue; padding: 10px;">
+          This is a <strong>block</strong> element. It takes up the full width.
+        </div>
+        <aside class="notes">
+          Los elementos <strong>block</strong> siempre comienzan en una nueva línea.
+          Ocupan todo el ancho disponible de su contenedor, incluso si el contenido es corto.
+          Se les puede aplicar fácilmente márgenes, padding, ancho y alto.
+          Algunos ejemplos comunes son: <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code> a
+          <code>&lt;h6&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;section&gt;</code>, etc.
+          Se utilizan para estructurar secciones completas o bloques de contenido dentro de una página.
+
+          Existe también un tipo mixto llamado <strong>inline-block</strong>.
+          Se comporta como un elemento inline porque se queda en la misma línea,
+          pero permite aplicar ancho, alto y márgenes como si fuera block.
+          Es útil cuando queremos alinear elementos en línea pero con más control de estilo.
+        </aside>
+
+
+
+      </section>
+
+      <section>
+        <h3>Live Coding!</h3>
+        <img src="images/live-dangerously.jpg" alt="i also like to live dangerously"><br>
+        <a href="http://localhost:8282/block.html" target="_blank">Example!</a>
+        <aside class="notes">
           <ul>
-            <li><code class="il">span</code></li>
-            <li><code class="il">b</code>, <code class="il">i</code></li>
-            <li>etc...</li>
+            <li>Abrir el Inspector</li>
+            <li>margen, padding, borde, ancho/alto</li>
+            <li>Los márgenes se usan para crear espacio alrededor del elemento</li>
+            <li>La propiedad <code>border</code> se usa para darle estilo a los bordes de un elemento</li>
+            <li>El <code>padding</code> se usa para crear espacio alrededor del contenido de un elemento</li>
+            <li>Las propiedades <code>height</code> y <code>width</code> en CSS se usan para definir el alto y ancho de
+              un elemento</li>
+            <li>La propiedad <code>max-width</code> en CSS se usa para definir el ancho máximo de un elemento</li>
+            <li>trabajando con un elemento block, y NO con un elemento inline</li>
+            <li>usar las teclas de flecha para modificar valores numéricos</li>
           </ul>
-        </section>
-        
-        <section>
-          <h3>Block Elements</h3>
-          <p>Style everything!</p>
-          <img src="images/box-model.png" alt="box model">
-        </section>
-        
-        <section>
-          <h3>Live Coding!</h3>
-          <img src="images/live-dangerously.jpg" alt="i also like to live dangerously"><br>
-          <a href="http://localhost:8282/block.html" target="_blank">Example!</a>
-          <aside class="notes">
-            <ul>
-              <li>Get to Inspector</li>
-              <li>margin, padding, border, width/height</li>
-              <li>working on a block element, and NOT working on an inline element</li>
-              <li>using arrow keys for numbers</li>
-            </ul>
-          </aside>
-        </section>
+        </aside>
+      </section>
 
 
-        <section>
-          <h1>Selectors</h1>
-          <p>How CSS knows what elements to apply rules to</p>
-        </section>
-        <section>
-          <h2><code class="il">element</code> Selectors</h2>
-          <p>Selects all elements</p>
-          <div class='c-grid'>
-            <div>HTML:
-              <pre><code class="html">
-<h1>
-  I'll be green
-</h1>
-              </pre></code>
-            </div>
-            <div>CSS:
-              <pre><code class="css">
-h1 {
+      <section>
+        <h1>Selectors</h1>
+        <p>How CSS knows what elements to apply rules to</p>
+        <aside class="notes">
+          Los selectores en CSS son los que nos permiten indicar a qué elementos del HTML se les debe aplicar una regla
+          de estilo.
+          Es decir, le dicen al navegador: “aplícale este estilo a estos elementos”.
+          Hay varios tipos de selectores: por tipo, por clase, por ID, por atributos, combinadores, y más.
+          En las siguientes diapositivas vamos a ver ejemplos de cómo funcionan.
+        </aside>
+
+      </section>
+      <section>
+        <h2><code class="il">element</code> Selectors</h2>
+        <p>Selects all elements of the same type</p>
+        <div class='c-grid'>
+          <div>HTML:
+            <pre><code class="html">
+<h3>
+  I'm the first heading — green!
+</h3>
+<h3>
+  I'm the second heading — also green!
+</h3>
+      </code></pre>
+          </div>
+          <div>CSS:
+            <pre><code class="css">
+h3 {
   color: green;
 }
-              </pre></code>
-            </div>
+      </code></pre>
           </div>
-        </section>
-        <section>
-          <h2><code class="il">.class</code> Selectors</h2>
-          <p>Selects all elements with a particular class</p>
-          <div class='c-grid'>
-            <div>HTML:
-              <pre><code class="html">
-<div class="my-class-selector">
-  I'll be green
-</div>
-              </pre></code>
-            </div>
-            <div>CSS:
-              <pre><code class="css">
-.my-class-selector {
-  color: green;
-}
-              </pre></code>
-            </div>
-          </div>
-        </section>
+        </div>
+        <hr>
 
-        <section>
-          <h2><code class="il">#id</code> Selectors</h2>
-          <p>Selects all elements with a particular ID</p>
-          <div class='c-grid'>
-            <div>HTML:
-              <pre><code class="html">
-<div id="my-id-selector">
-  I'll be green
-</div>
-              </pre></code>
-            </div>
-            <div>CSS:
-              <pre><code class="css">
-#my-id-selector {
-  color: green;
-}
-              </pre></code>
-            </div>
-          </div>
-        </section>
-        <section>
-          <h2>Compounding Selectors: pt 1</h2>
-          <p>no space == same element</p>
+        <div>
+          <h5>Result:</h5>
+          <h3 style="color: green; font-size: 32px;">I'm the first heading — green!</h3>
+          <h3 style="color: green; font-size: 32px;">I'm the second heading — also green!</h3>
+        </div>
+        <aside class="notes">
+          Este es un ejemplo de un selector por <strong>tipo de elemento</strong>.
+          En este caso, el selector <code>h3</code> se refiere a todos los elementos <code>&lt;h3&gt;</code> que haya en
+          el HTML.
+          Entonces, cualquier <code>h3</code> que aparezca en la página se va a mostrar en color verde.
+          Es la forma más básica de seleccionar elementos con CSS.
+        </aside>
 
-          <div class='c-grid'>
-            <div>HTML:
-              <pre><code class="html">
+      </section>
+      <section>
+        <h2><code class="il">.class</code> Selectors</h2>
+        <p>Selects all elements with a particular class</p>
+
+        <div class='c-grid'>
+          <div>HTML:
+            <pre><code class="html">
+      <div class="my-class-selector">
+        I'm a div — orange!
+      </div>
+      <p class="my-class-selector">
+        I'm a paragraph — also orange!
+      </p>
+            </code></pre>
+          </div>
+          <div>CSS:
+            <pre><code class="css">
+      .my-class-selector {
+        color: orange;
+      }
+            </code></pre>
+          </div>
+        </div>
+
+        <hr>
+
+        <div>
+          <h4>Result:</h4>
+          <div class="my-class-selector" style="color: orange;">
+            I'm a div — orange!
+          </div>
+          <p class="my-class-selector" style="color: orange;">
+            I'm a paragraph — also orange!
+          </p>
+        </div>
+        <aside class="notes">
+          Ahora vemos un <strong>selector por clase</strong>, que se escribe con un punto seguido del nombre de la
+          clase.
+          En este caso, el selector <code>.my-class-selector</code> se aplica a cualquier elemento que tenga esa clase,
+          sin importar qué tipo de elemento sea.
+          Por eso, este <code>div</code> se mostrará en color naranjado.
+          Los selectores por clase son muy útiles para aplicar estilos de forma más específica o reutilizable.
+        </aside>
+
+      </section>
+
+      <section>
+        <h2><code class="il">#id</code> Selectors</h2>
+        <p>Selects a single element with a particular ID</p>
+
+        <div class='c-grid'>
+          <div>HTML:
+            <pre><code class="html">
+      <div id="my-id-selector">
+        I'm a div — blue!
+      </div>
+            </code></pre>
+          </div>
+          <div>CSS:
+            <pre><code class="css">
+      #my-id-selector {
+        color: blue;
+      }
+            </code></pre>
+          </div>
+        </div>
+
+        <hr>
+
+        <div>
+          <h3>Result:</h3>
+          <div id="my-id-selector" style="color: blue;">
+            I'm a div — blue!
+          </div>
+        </div>
+        <aside class="notes">
+          <p>Este es un ejemplo de un <strong>selector por ID</strong>. Se escribe con el símbolo <code>#</code> seguido
+            del nombre del ID. En este caso, <code>#my-id-selector</code> selecciona el elemento que tenga exactamente
+            ese ID.</p>
+
+          <p>A diferencia de las clases, los IDs deben ser únicos en la página. Es decir, solo debería haber un elemento
+            con ese ID. Aquí, ese <code>div</code> se mostrará en color verde.</p>
+
+          <hr>
+
+          <h4>❌ Qué problemas genera tener IDs duplicados:</h4>
+
+          <ol>
+            <li>
+              <strong>Violación de especificaciones HTML</strong><br>
+              El estándar HTML dice que un <code>id</code> <strong>debe ser único</strong>, así que es técnicamente
+              inválido.
+            </li>
+            <li>
+              <strong>JavaScript se comporta de forma inesperada</strong><br>
+              Métodos como <code>document.getElementById("mi-id")</code> <strong>solo retornan el primer
+                elemento</strong> con ese <code>id</code>, ignorando los demás.<br>
+              Eso puede hacer que tu lógica falle o actúe sobre el elemento incorrecto.
+            </li>
+            <li>
+              <strong>CSS puede aplicar estilos de forma errática</strong><br>
+              Los selectores con <code>#mi-id</code> afectarán <strong>todos los elementos con ese
+                <code>id</code></strong>, aunque normalmente se espera que sea solo uno.<br>
+              El orden en que se renderiza puede influir, generando resultados inconsistentes.
+            </li>
+            <li>
+              <strong>Problemas de accesibilidad</strong><br>
+              Algunos lectores de pantalla o herramientas de asistencia pueden depender de los <code>id</code> para
+              navegar o describir contenido. Duplicarlos puede confundirlos.
+            </li>
+            <li>
+              <strong>Herramientas de testing y automatización pueden fallar</strong><br>
+              Si haces pruebas automatizadas (con Cypress, Selenium, etc.), los <code>id</code> duplicados pueden hacer
+              que los tests no funcionen correctamente.
+            </li>
+          </ol>
+
+          <hr>
+
+          <h4>✅ ¿Qué hacer en su lugar?</h4>
+          <ul>
+            <li>Usa <code>class</code> si varios elementos comparten un estilo o funcionalidad.</li>
+            <li>Si necesitas identificar varios elementos similares en JS, usa <code>data-id</code>, <code>class</code>
+              o atributos personalizados.</li>
+            <li>Si necesitas IDs únicos dinámicamente, puedes usar un prefijo + índice (por ejemplo,
+              <code>card-1</code>, <code>card-2</code>, etc.).
+            </li>
+          </ul>
+
+          <hr>
+
+          <p>¿Quieres que te muestre un ejemplo concreto con código?</p>
+        </aside>
+
+
+      </section>
+      <section>
+        <h2>Compounding Selectors: pt 1</h2>
+        <p>no space == same element</p>
+
+        <div class='c-grid'>
+          <div>HTML:
+            <pre><code class="html">
 <div class="headline fancy">
   I'll be green
 </div>
               </pre></code>
-            </div>
-            <div>CSS:
-              <pre><code class="css">
+          </div>
+          <div>CSS:
+            <pre><code class="css">
 div.headline {
   color: green;
 }
@@ -296,47 +464,93 @@ div.headline {
   color: green;
 }
               </pre></code>
+          </div>
+        </div>
+        <aside class="notes">
+          Aquí estamos viendo selectores compuestos sin espacio entre ellos, lo cual significa que se refieren al
+          <strong>mismo elemento</strong>.
+          En el primer ejemplo, <code>div.headline</code> selecciona cualquier elemento <code>div</code> que tenga la
+          clase <code>headline</code>.
+          En el segundo caso, <code>.headline.fancy</code> selecciona cualquier elemento que tenga ambas clases al mismo
+          tiempo: <code>headline</code> y <code>fancy</code>.
+          Es decir, <strong>no hay espacio</strong> porque estamos hablando del mismo elemento que cumple varias
+          condiciones.
+        </aside>
+
+      </section>
+      <section>
+        <h2>Compounding Selectors: pt 2</h2>
+        <p><code>space</code> means parent → child selector</p>
+
+        <div class='c-grid'>
+          <div>HTML:
+            <pre><code class="html">
+      <div class="headline">
+        <h5>I'm the first subtitle</h5>
+        <div>
+          <h5>I'm the second subtitle</h5>
+        </div>
+      </div>
+            </code></pre>
+          </div>
+          <div>CSS:
+            <pre><code class="css">
+      .headline h5 {
+        color: purple;
+        font-style: italic;
+      }
+            </code></pre>
+          </div>
+        </div>
+
+        <hr>
+
+        <div>
+          <h3>Result:</h3>
+          <div class="headline">
+            <h5 style="color: purple; font-style: italic;">I'm the first title</h5>
+            <div>
+              <h5 style="color: purple; font-style: italic;">I'm the second title</h5>
             </div>
           </div>
-        </section>
-        <section>
-          <h2>Compounding Selectors: pt 2</h2>
-          <p>space == parent/child selector</p>
-          <div class='c-grid'>
-            <div>HTML:
-              <pre><code class="html">
-<div class="headline">
-  <h1>I'll be green</h1>
-  <div>
-    <h1>I'm also green</h1>
-  </div>
-</div>
-              </pre></code>
-            </div>
-            <div>CSS:
-              <pre><code class="css">
-.headline h1 {
-  color: green;
-}
-              </pre></code>
-            </div>
-          </div>
-        </section>
-        <section>
-          <h1>Easy, right?</h1>
-        </section>
-        <section>
-          <h3>What now?</h3>
-          <div class='c-grid'>
-            <div>HTML:
-              <pre><code class="html">
+        </div>
+        <aside class="notes">
+          En esta diapositiva usamos selectores compuestos con <strong>espacio</strong>, lo que significa que estamos
+          seleccionando un <strong>descendiente</strong>.
+          El selector <code>.headline h5</code> aplica estilos a cualquier <code>&lt;h5&gt;</code> que esté dentro de un
+          elemento con clase <code>headline</code>, sin importar cuán profundo esté.
+          Es decir, no importa si el <code>h5</code> está anidado directamente o dentro de otro <code>div</code> dentro
+          de <code>.headline</code>, igual será seleccionado.
+          Por eso ambos títulos <code>&lt;h5&gt;</code> aparecen en <strong>morado</strong> y con estilo
+          <code>italic</code>.
+        </aside>
+
+
+      </section>
+      <section>
+        <h1>Easy, right?</h1>
+        <aside class="notes">
+          Hasta ahora todo ha sido bastante directo y fácil de seguir, ¿cierto?
+          Pero CSS tiene algunos comportamientos que pueden sorprendernos si no entendemos bien cómo funcionan las
+          reglas.
+          Vamos a ver un ejemplo que parece simple, pero que nos ayudará a introducir el concepto de especificidad y el
+          orden en que se aplican las reglas.
+        </aside>
+
+      </section>
+
+      <section>
+        <h3>What now?</h3>
+        <div class='c-grid'>
+          <div>HTML:
+            <pre><code class="html">
 <h1 id="header" class="headline">
   what color will i be?!
 </h1>
               </pre></code>
-            </div>
-            <div>CSS:
-              <pre><code class="css">
+          </div>
+          <div>CSS:
+            <pre><code class="css">
 h1 {
   color: red;
 }
@@ -345,21 +559,31 @@ h1 {
   color: green;
 }
               </pre></code>
-            </div>
           </div>
-        </section>
-        <section>
-          <h3>What about now?</h3>
-          <div class='c-grid'>
-            <div>HTML:
-              <pre><code class="html">
+        </div>
+        <aside class="notes">
+          En este ejemplo tenemos dos reglas que aplican al mismo elemento: ambas están dirigidas a <code>h1</code>.
+          Ambas reglas tienen la misma especificidad, porque seleccionan el mismo tipo de elemento.
+          Entonces, ¿cuál se aplica?
+          En este caso, gana la segunda regla porque está escrita después.
+          En CSS, cuando hay dos reglas con la misma especificidad, la que aparece más abajo en el código es la que se
+          aplica.
+          Así que este <code>h1</code> será verde.
+        </aside>
+
+      </section>
+      <section>
+        <h3>What about now?</h3>
+        <div class='c-grid'>
+          <div>HTML:
+            <pre><code class="html">
 <h1 id="header" class="headline">
   what color will i be?!
 </h1>
               </pre></code>
-            </div>
-            <div>CSS:
-              <pre><code class="css">
+          </div>
+          <div>CSS:
+            <pre><code class="css">
 h1 {
   color: red;
 }
@@ -370,23 +594,36 @@ h1 {
   color: blue;
 }
               </pre></code>
-            </div>
           </div>
-        </section>
-        <section>
-          <h3>Now?!</h3>
-          <div class='c-grid'>
-            <div>HTML:
-              <pre><code class="html">
+        </div>
+        <aside class="notes">
+          Ahora tenemos tres reglas diferentes que aplican estilos al mismo <code>&lt;h1&gt;</code>.
+          ¿Cuál se aplica?
+          No se trata solo del orden en el que aparecen, sino de la **especificidad**.
+
+          La regla para <code>#header</code> tiene mayor especificidad porque los selectores por ID son más fuertes que
+          los selectores por clase o por tipo de elemento.
+          Así que, aunque <code>.headline</code> y <code>h1</code> también aplican color, el color naranja del
+          <code>#header</code> será el que prevalezca.
+
+          Este es un buen ejemplo para explicar cómo CSS decide cuál estilo aplicar cuando hay múltiples opciones.
+        </aside>
+
+      </section>
+      <section>
+        <h3>Now?!</h3>
+        <div class='c-grid'>
+          <div>HTML:
+            <pre><code class="html">
 <div class="container">
   <h1 id="header" class="headline">
     what color will i be?!
   </h1>
 </div>
               </pre></code>
-            </div>
-            <div>CSS:
-              <pre><code class="css">
+          </div>
+          <div>CSS:
+            <pre><code class="css">
 div.container h1 {
   color: red;
 }
@@ -397,24 +634,51 @@ div.container h1 {
   color: blue;
 }
               </pre></code>
-            </div>
           </div>
-        </section>
-        <section>
-          <img src="images/panic.jpg" alt="panic">
-        </section>
-        <section>
-          <h1>Enter: The Cascade</h1>
-          <aside class="notes">We have to have a way to tell which styles take prescedence</aside>
-        </section>
+        </div>
+        <aside class="notes">
+          Este ejemplo combina varios tipos de selectores y nos reta a identificar cuál tiene mayor especificidad.
 
-        <section>
-          <h2>Cascade: Order</h2>
-          <p>"Styles loaded later override those loaded earlier"</p>
-        </section>
-        <section>
-          <h3>Physically lower styles take prescedence</h3>
-          <pre><code class="css">
+          <code>div.container h1</code> es un selector combinado, pero no es tan específico como un ID.
+          <code>.container .headline</code> son dos clases juntas, lo cual suma algo más de especificidad.
+          Pero <code>#header</code> sigue siendo el más específico de los tres.
+
+          Por lo tanto, aunque las otras reglas también aplican, el <strong>color naranja</strong> de
+          <code>#header</code> será el que se muestre.
+          Este es un excelente ejemplo para ilustrar cómo CSS prioriza las reglas usando la especificidad.
+        </aside>
+
+      </section>
+      <section>
+        <img src="images/panic.jpg" alt="panic">
+      </section>
+      <section>
+        <h1>Enter: The Cascade</h1>
+        <aside class="notes">
+          Debemos tener una forma de determinar qué estilos tienen prioridad cuando hay múltiples reglas que podrían
+          aplicarse a un mismo elemento.
+          Aquí es donde entra en juego la "cascada" de CSS.
+          La cascada define el orden en el que se aplican los estilos cuando hay conflictos, y está influenciada por el
+          orden del código, la especificidad del selector y si se usa <code>!important</code>.
+        </aside>
+
+      </section>
+
+      <section>
+        <h2>Cascade: Order</h2>
+        <p>"Styles loaded later override those loaded earlier"</p>
+        <aside class="notes">
+          Esta diapositiva introduce el primer principio de la cascada: el orden.
+          Cuando dos reglas aplican al mismo elemento y tienen la misma especificidad, gana la que aparece más abajo en
+          el código.
+          Es decir, los estilos que se cargan después sobrescriben a los anteriores si tienen el mismo nivel de
+          importancia.
+        </aside>
+
+      </section>
+      <section>
+        <h3>Physically lower styles take prescedence</h3>
+        <pre><code class="css">
 h1 {
   color: green;
 }
@@ -425,284 +689,558 @@ h1 {
   color: orange; /* h1 will be orange */
 }
           </code></pre>
-          <aside class="notes">Think of this like a "merge" function</aside>
-        </section>
-        <section>
-          <h2>Cascade: Specificity</h2>
-          <p>"The more specific it is, the more I care."</p>
-        </section>
-        <section>
-          <h2>Sounds Easy, right?</h2>
-          <img src="images/oh-sweetie.gif" alt="oh, sweetie" class="fragment">
-        </section>
+        <aside class="notes">
+          Aquí vemos cómo el orden físico en el código afecta el resultado.
+          Aunque el primer bloque dice que los <code>h1</code> serán verdes, y hay otra regla para los <code>div</code>,
+          al final hay otra regla para <code>h1</code> que dice que serán naranjas.
+          Como esta última aparece más abajo, sobrescribe a la anterior.
+          Podemos pensar esto como una función de "mezcla" donde lo último que se define, si aplica, gana.
+        </aside>
 
-        <section class="stormtrooper">
-          <h3>Element Selectors</h3>
-          <code class="il">body section h1</code> ==
+      </section>
+      <section>
+        <h2>Cascade: Specificity</h2>
+        <p>"The more specific it is, the more I care."</p>
+        <aside class="notes">
+          El segundo principio de la cascada es la especificidad.
+          Cuando varias reglas apuntan al mismo elemento, gana la que sea más específica.
+          Por ejemplo, un selector de ID <code>#id</code> es más específico que una clase <code>.clase</code>, y una
+          clase es más específica que un selector de elemento como <code>h1</code>.
+          Por eso decimos que “cuanto más específico sea, más peso tiene”.
+        </aside>
 
-          <table class="ctr">
-						<tr>
-							<th>element <br> <div class="inline-stormtrooper"></div></th>
-						</tr>
-						<tr>
-							<td>3</td>
-						</tr>
-					</table>
-        </section>
+      </section>
+      <section>
+        <h2>Sounds Easy, right?</h2>
+        <img src="images/oh-sweetie.gif" alt="oh, sweetie" class="fragment">
+        <aside class="notes">
+          Hasta ahora suena fácil, ¿cierto? Pero aquí es cuando las cosas empiezan a complicarse.
+          Aunque entendamos el orden y la especificidad, en la práctica puede volverse un rompecabezas cuando se
+          combinan varios estilos desde distintas fuentes.
+          Así que esta imagen es perfecta para anticipar lo que viene: "Ay, dulce inocencia", pensar que todo sería así
+          de sencillo.
+        </aside>
 
-        <section class="vader">
-          <h3>.class Selectors</h3>
-          <code class="il">.headline.content .primary .foo</code> ==
+      </section>
 
-          <table class="ctr">
-            <tr>
-							<th>.class <br> <div class="inline-vader"></div></th>
-              <th>element <br> <div class="inline-stormtrooper"></div></th>
-						</tr>
-						<tr>
-              <td>4</td>
-							<td>0</td>
-						</tr>
-					</table>
-        </section>
+      <section class="stormtrooper">
+        <h3>Element Selectors</h3>
+        <code class="il">body section h1</code> ==
 
-        <section class="emperor">
-          <h3>#id Selectors</h3>
-          <code class="il">#main #home</code> ==
+        <table class="ctr">
+          <tr>
+            <th>element <br>
+              <div class="inline-stormtrooper"></div>
+            </th>
+          </tr>
+          <tr>
+            <td>3</td>
+          </tr>
+        </table>
+        <aside class="notes">
+          Esta diapositiva muestra cómo se calcula la especificidad de un selector compuesto solo por elementos.
+          El selector <code>body section h1</code> contiene tres elementos, por lo tanto su especificidad es 0-0-3.
+          Cada tipo de selector tiene un "peso": los selectores de elementos suman 1 punto cada uno.
+          Por eso aquí vemos el número 3.
+          Aunque es más específico que un solo <code>h1</code>, sigue siendo menos específico que una clase o un ID.
+        </aside>
 
-          <table class="ctr">
-            <tr>
-              <th>#id <br> <div class="inline-emperor"></div></th>
-							<th>.class <br> <div class="inline-vader"></div></th>
-              <th>element <br> <div class="inline-stormtrooper"></div></th>
-						</tr>
-						<tr>
-              <td>2</td>
-              <td>0</td>
-							<td>0</td>
-						</tr>
-					</table>
-        </section>
+      </section>
 
-        <section>
-          <h3>Example</h3>
-          <code class="il">body #main.container h1.headline</code>
+      <section class="vader">
+        <h3>.class Selectors</h3>
+        <code class="il">.headline.content .primary .foo</code> ==
 
-          <table class="ctr">
-            <tr>
-              <th>#id <br> <div class="inline-emperor"></div></th>
-							<th>.class <br> <div class="inline-vader"></div></th>
-              <th>element <br> <div class="inline-stormtrooper"></div></th>
-						</tr>
-						<tr>
-              <td>1</td>
-              <td>2</td>
-							<td>2</td>
-						</tr>
-					</table>
-        </section>
+        <table class="ctr">
+          <tr>
+            <th>.class <br>
+              <div class="inline-vader"></div>
+            </th>
+            <th>element <br>
+              <div class="inline-stormtrooper"></div>
+            </th>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>0</td>
+          </tr>
+        </table>
+        <aside class="notes">
+          Ahora estamos viendo un selector que solo usa clases: <code>.headline.content .primary .foo</code>.
+          Cada clase cuenta como un punto en la segunda columna de la especificidad, lo que nos da un total de 0-4-0.
+          Eso significa que este selector es más específico que cualquier combinación de solo elementos, sin importar
+          cuántos tenga.
+          Es una forma clara de mostrar cómo las clases tienen más peso que los elementos al momento de aplicar estilos.
+        </aside>
 
-        <section>
-          <h3>Example</h3>
-          <code class="il">div span span span span b i i span span i b</code>
+      </section>
 
-          <table class="ctr">
-            <tr>
-              <th>#id <br> <div class="inline-emperor"></div></th>
-							<th>.class <br> <div class="inline-vader"></div></th>
-              <th>element <br> <div class="inline-stormtrooper"></div></th>
-						</tr>
-						<tr>
-              <td>0</td>
-              <td>0</td>
-							<td>12</td>
-						</tr>
-					</table>
-        </section>
+      <section class="emperor">
+        <h3>#id Selectors</h3>
+        <code class="il">#main #home</code> ==
 
-        <section>
-          <h3>Which is more specific?</h3>
-          <p>A: <code class="il">div span span span span b i i span span i a</code></p>
-          <p>B: <code class="il">.header</code></p>
+        <table class="ctr">
+          <tr>
+            <th>#id <br>
+              <div class="inline-emperor"></div>
+            </th>
+            <th>.class <br>
+              <div class="inline-vader"></div>
+            </th>
+            <th>element <br>
+              <div class="inline-stormtrooper"></div>
+            </th>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+        </table>
+        <aside class="notes">
+          Aquí vemos el poder absoluto de los selectores de ID.
+          El selector <code>#main #home</code> contiene dos IDs, así que su especificidad es 2-0-0.
+          Los IDs son lo más específico que puedes usar en CSS antes de llegar al temido <code>!important</code>.
+          En una batalla de especificidad, un solo ID puede vencer a muchas clases o elementos.
+          Esta tabla visual nos ayuda a ver cómo los IDs son los emperadores en la jerarquía de estilos.
+        </aside>
 
-          <div class='c-grid fragment'>
-            <div>
-              <h3>A: </h3>
-              <table class="ctr">
-                <tr>
-                  <th>#id <br> <div class="inline-emperor"></div></th>
-    							<th>.class <br> <div class="inline-vader"></div></th>
-                  <th>element <br> <div class="inline-stormtrooper"></div></th>
-    						</tr>
-    						<tr>
-                  <td>0</td>
-                  <td>0</td>
-    							<td>12</td>
-    						</tr>
-    					</table>
-            </div>
-            <div>
-              <h3 style="background: green; color: white;">B: </h3>
-              <table class="ctr">
-                <tr>
-                  <th>#id <br> <div class="inline-emperor"></div></th>
-    							<th>.class <br> <div class="inline-vader"></div></th>
-                  <th>element <br> <div class="inline-stormtrooper"></div></th>
-    						</tr>
-    						<tr>
-                  <td>0</td>
-                  <td>1</td>
-    							<td>0</td>
-    						</tr>
-    					</table>
-            </div>
+      </section>
+
+      <section>
+        <h3>Example</h3>
+        <code class="il">body #main.container h1.headline</code>
+
+        <table class="ctr">
+          <tr>
+            <th>#id <br>
+              <div class="inline-emperor"></div>
+            </th>
+            <th>.class <br>
+              <div class="inline-vader"></div>
+            </th>
+            <th>element <br>
+              <div class="inline-stormtrooper"></div>
+            </th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+          </tr>
+        </table>
+        <aside class="notes">
+          Este es un excelente ejemplo para repasar cómo se calcula la especificidad de un selector combinado.
+          El selector <code>body #main.container h1.headline</code> contiene:
+          un ID (<code>#main</code>), dos clases (<code>.container</code> y <code>.headline</code>) y dos elementos
+          (<code>body</code> y <code>h1</code>).
+          Eso nos da una especificidad de 1-2-2.
+          Al ver esta tabla, podemos ver cómo cada tipo de selector suma puntos en su respectiva columna.
+          Este tipo de selectores son comunes en proyectos grandes, y entender cómo funcionan es clave para evitar
+          conflictos de estilo.
+        </aside>
+
+      </section>
+
+      <section>
+        <h3>Example</h3>
+        <code class="il">div span span span span b i i span span i b</code>
+
+        <table class="ctr">
+          <tr>
+            <th>#id <br>
+              <div class="inline-emperor"></div>
+            </th>
+            <th>.class <br>
+              <div class="inline-vader"></div>
+            </th>
+            <th>element <br>
+              <div class="inline-stormtrooper"></div>
+            </th>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>12</td>
+          </tr>
+        </table>
+        <aside class="notes">
+          Este ejemplo muestra un selector con doce elementos: <code>div span span span span b i i span span i b</code>.
+          Aunque parece muy largo y detallado, solo usa elementos, así que su especificidad es 0-0-12.
+          Eso significa que cualquier selector con una sola clase o ID fácilmente podría sobrescribir este estilo.
+          Este ejemplo demuestra que más largo no significa más específico.
+          A veces creemos que un selector complicado es más fuerte, pero la jerarquía de la especificidad nos muestra
+          que no es así.
+        </aside>
+
+      </section>
+
+      <section>
+        <h3>Which is more specific?</h3>
+        <p>A: <code class="il">div span span span span b i i span span i a</code></p>
+        <p>B: <code class="il">.header</code></p>
+
+        <div class='c-grid fragment'>
+          <div>
+            <h3>A: </h3>
+            <table class="ctr">
+              <tr>
+                <th>#id <br>
+                  <div class="inline-emperor"></div>
+                </th>
+                <th>.class <br>
+                  <div class="inline-vader"></div>
+                </th>
+                <th>element <br>
+                  <div class="inline-stormtrooper"></div>
+                </th>
+              </tr>
+              <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>12</td>
+              </tr>
+            </table>
           </div>
-        </section>
-
-        <section>
-          <h3>Which is more specific?</h3>
-          <p>A: <code class="il">#header-content</code></p>
-          <p>B: <code class="il">h3.header .header__content</code></p>
-
-          <div class='c-grid fragment'>
-            <div>
-              <h3 style="background: green; color: white;">A: </h3>
-              <table class="ctr">
-                <tr>
-                  <th>#id <br> <div class="inline-emperor"></div></th>
-    							<th>.class <br> <div class="inline-vader"></div></th>
-                  <th>element <br> <div class="inline-stormtrooper"></div></th>
-    						</tr>
-    						<tr>
-                  <td>1</td>
-                  <td>0</td>
-    							<td>0</td>
-    						</tr>
-    					</table>
-            </div>
-            <div>
-              <h3>B: </h3>
-              <table class="ctr">
-                <tr>
-                  <th>#id <br> <div class="inline-emperor"></div></th>
-    							<th>.class <br> <div class="inline-vader"></div></th>
-                  <th>element <br> <div class="inline-stormtrooper"></div></th>
-    						</tr>
-    						<tr>
-                  <td>0</td>
-                  <td>2</td>
-    							<td>1</td>
-    						</tr>
-    					</table>
-            </div>
+          <div>
+            <h3 style="background: green; color: white;">B: </h3>
+            <table class="ctr">
+              <tr>
+                <th>#id <br>
+                  <div class="inline-emperor"></div>
+                </th>
+                <th>.class <br>
+                  <div class="inline-vader"></div>
+                </th>
+                <th>element <br>
+                  <div class="inline-stormtrooper"></div>
+                </th>
+              </tr>
+              <tr>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+              </tr>
+            </table>
           </div>
-        </section>
+        </div>
+        <aside class="notes">
+          Esta diapositiva compara dos selectores: uno formado solo por elementos HTML, y otro que simplemente
+          usa una clase.
+          Aunque el primero tiene 12 elementos, su especificidad es 0-0-12.
+          En cambio, el segundo tiene solo una clase, pero su especificidad es 0-1-0, lo que lo hace más fuerte.
+          Este ejemplo demuestra que usar clases tiene más peso que una larga cadena de elementos.
+        </aside>
 
-        <section>
-          <h3>Which is more specific?</h3>
-          <p>A: <code class="il">header#header-content h2.title</code></p>
-          <p>B: <code class="il">#header-content h2.title</code></p>
+      </section>
 
-          <div class='c-grid fragment'>
-            <div>
-              <h3 style="background: green; color: white;">A: </h3>
-              <table class="ctr">
-                <tr>
-                  <th>#id <br> <div class="inline-emperor"></div></th>
-    							<th>.class <br> <div class="inline-vader"></div></th>
-                  <th>element <br> <div class="inline-stormtrooper"></div></th>
-    						</tr>
-    						<tr>
-                  <td>1</td>
-                  <td>1</td>
-    							<td>2</td>
-    						</tr>
-    					</table>
-            </div>
-            <div>
-              <h3>B: </h3>
-              <table class="ctr">
-                <tr>
-                  <th>#id <br> <div class="inline-emperor"></div></th>
-    							<th>.class <br> <div class="inline-vader"></div></th>
-                  <th>element <br> <div class="inline-stormtrooper"></div></th>
-    						</tr>
-    						<tr>
-                  <td>1</td>
-                  <td>1</td>
-    							<td>1</td>
-    						</tr>
-    					</table>
-            </div>
+      <section>
+        <h3>Which is more specific?</h3>
+        <p>A: <code class="il">#header-content</code></p>
+        <p>B: <code class="il">h3.header .header__content</code></p>
+
+        <div class='c-grid fragment'>
+          <div>
+            <h3 style="background: green; color: white;">A: </h3>
+            <table class="ctr">
+              <tr>
+                <th>#id <br>
+                  <div class="inline-emperor"></div>
+                </th>
+                <th>.class <br>
+                  <div class="inline-vader"></div>
+                </th>
+                <th>element <br>
+                  <div class="inline-stormtrooper"></div>
+                </th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+            </table>
           </div>
-        </section>
+          <div>
+            <h3>B: </h3>
+            <table class="ctr">
+              <tr>
+                <th>#id <br>
+                  <div class="inline-emperor"></div>
+                </th>
+                <th>.class <br>
+                  <div class="inline-vader"></div>
+                </th>
+                <th>element <br>
+                  <div class="inline-stormtrooper"></div>
+                </th>
+              </tr>
+              <tr>
+                <td>0</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <aside class="notes">
+          Aquí comparamos un selector con un solo ID contra un selector con una clase, un elemento y un selector
+          descendente.
+          A pesar de que el segundo parece más complejo visualmente, el ID del primer selector le da una mayor
+          especificidad: 1-0-0 vs. 0-2-1.
+          Los IDs siempre ganan sobre clases y elementos, sin importar cuántos se usen.
+        </aside>
 
-        <section>
-          <h3>Nuclear Options</h3>
-          <p>Use with care!</p>
-          <img src="images/elmo-fire.gif"/>
-        </section>
+      </section>
 
-        <section>
-          <h3>Styles on elements take prescedence</h3>
-          <pre><code class="css">
+      <section>
+        <h3>Which is more specific?</h3>
+        <p>A: <code class="il">header#header-content h2.title</code></p>
+        <p>B: <code class="il">#header-content h2.title</code></p>
+
+        <div class='c-grid fragment'>
+          <div>
+            <h3 style="background: green; color: white;">A: </h3>
+            <table class="ctr">
+              <tr>
+                <th>#id <br>
+                  <div class="inline-emperor"></div>
+                </th>
+                <th>.class <br>
+                  <div class="inline-vader"></div>
+                </th>
+                <th>element <br>
+                  <div class="inline-stormtrooper"></div>
+                </th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <h3>B: </h3>
+            <table class="ctr">
+              <tr>
+                <th>#id <br>
+                  <div class="inline-emperor"></div>
+                </th>
+                <th>.class <br>
+                  <div class="inline-vader"></div>
+                </th>
+                <th>element <br>
+                  <div class="inline-stormtrooper"></div>
+                </th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <aside class="notes">
+          En esta comparación ambos selectores tienen el mismo ID y la misma clase, pero el primero tiene un elemento
+          adicional al inicio.
+          Aunque los dos tienen 1 ID y 1 clase, el primero tiene más elementos, por lo que su especificidad total es más
+          alta: 1-1-2 vs. 1-1-1.
+          Esto demuestra que incluso entre selectores con igual número de ID y clases, los elementos también suman
+          puntos.
+        </aside>
+
+      </section>
+
+      <section>
+        <h3>Nuclear Options</h3>
+        <p>Use with care!</p>
+        <img src="images/elmo-fire.gif" />
+        <aside class="notes">
+          En esta sección hablamos de las "opciones nucleares" en CSS: aquellas que forzan un estilo sin importar la
+          cascada o la especificidad.
+          Son poderosas, pero pueden romper la coherencia de nuestros estilos si se abusa de ellas.
+          ¡úsalas con precaución!
+        </aside>
+
+      </section>
+
+      <section>
+        <h3>Styles on elements take prescedence</h3>
+        <pre><code class="css">
 h1 {
   color: green;
 }
           </code></pre>
-          <pre><code class="html">
+        <pre><code class="html">
 <h1 style="color: purple;">I'll be purple.</h1>
           </code></pre>
-          <p><i>USE SPARINGLY!</i></p>
-        </section>
+        <p><i>USE SPARINGLY!</i></p>
+        <div style="margin-top: 1rem;">
+          <h1 style="color: purple;">I'll be purple.</h1>
+        </div>
+        <aside class="notes">
+          Aquí mostramos que los estilos aplicados directamente en los elementos HTML usando el atributo `style` tienen
+          mayor prioridad que las reglas en hojas de estilo externas.
+          Por eso, aunque el CSS diga que los títulos deben ser verdes, este `h1` aparece en púrpura.
+          Es importante evitar esto cuando se pueda, porque complica el mantenimiento del código.
+        </aside>
 
-        <section>
-          <h3><code class="il">!important</code> tags</h3>
-          <pre><code class="css">
-h1 {
+      </section>
+
+      <section>
+        <h3><code class="il">!important</code> tags</h3>
+        <pre><code class="css">
+h4 {
   color: orange !important;
 }
 #headline {
   color: red;
 }
           </code></pre>
-          <pre><code class="html">
-<h1 id="headline" style="color: green;">I'll be orange.</h1>
+        <pre><code class="html">
+<h4 id="headline" style="color: green;">I'll be orange.</h4>
           </code></pre>
-          <p><i>USE SPARINGLY!</i></p>
-        </section>
+        <p><i>USE SPARINGLY!</i></p>
+        <div style="margin-top: 1rem;">
+          <h4 id="headline" style="color: green;">I'll be orange.</h4>
+        </div>
 
-<!-- Semantics -->
-        <section>
-          <h1>Semantics</h1>
-          <p>Aka: Naming stuff.</p>
-        </section>
-        <section>
-          <h3>What would you label this?</h3>
-          <div class="c-grid">
-            <div>
-              <img src="images/toy-box.jpg">
-            </div>
-            <div>
-              <ul>
-                <li class="fragment">"big"</li>
-                <li class="fragment">"box"</li>
-                <li class="fragment">"white"</li>
-                <li class="fragment">"40in"</li>
-                <li class="fragment" style="color: green">"toys"</li>
-              </ul>
-            </div>
+        <style>
+          h4 {
+            color: orange !important;
+          }
+
+          #headline {
+            color: red;
+          }
+        </style>
+        <aside class="notes">
+          El uso de `!important` sobrescribe todas las reglas, sin importar la especificidad.
+          En este ejemplo, aunque el ID y el atributo `style` intentan aplicar otros colores, el `!important` en naranja
+          gana.
+          Esta es la opción más extrema en CSS, y aunque puede resolver conflictos, debe usarse con mucha cautela.
+        </aside>
+
+      </section>
+
+      <section>
+        <h2>Three Ways to Insert CSS in HTML</h2>
+        <div class="c-grid">
+          <div>
+            <h3>External CSS</h3>
+            <pre><code class="html">
+      &lt;head&gt;
+        &lt;link rel="stylesheet" href="style.css"&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;This is a heading&lt;/h1&gt;
+      &lt;/body&gt;
+            </code></pre>
           </div>
-        </section>
+          <div>
+            <h3>Internal CSS</h3>
+            <pre><code class="html">
+      &lt;head&gt;
+        &lt;style&gt;
+          body {
+            background-color: blue;
+          }
+        &lt;/style&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;This is a heading&lt;/h1&gt;
+      &lt;/body&gt;
+            </code></pre>
+          </div>
+        </div>
 
-        <section>
-          <h3>What would you label this?</h3>
-          <blockquote class="important_quote">There are only two hard things in computer science: cache invalidation, and naming things. -Phil Carlton</blockquote>
-        </section>
+        <aside class="notes">
+          Estas son dos formas comunes de aplicar CSS:
+          <ul>
+            <li><strong>CSS externo</strong>: ideal para proyectos grandes, mantiene separado el contenido del diseño.
+            </li>
+            <li><strong>CSS interno</strong>: útil cuando queremos aplicar estilos rápidamente en una sola página HTML.
+            </li>
+          </ul>
+        </aside>
+      </section>
 
-        <section>
-          <h3>NO.</h3>
-          <pre><code class="css">
+      <section>
+        <h2>Three Ways to Insert CSS in HTML</h2>
+        <h3>Inline CSS</h3>
+        <pre><code class="html">
+      &lt;body&gt;
+        &lt;h1 style="color:blue;"&gt;This is a heading&lt;/h1&gt;
+      &lt;/body&gt;
+        </code></pre>
+
+        <aside class="notes">
+          La tercera forma es usar <strong>CSS en línea</strong>, directamente dentro del elemento HTML.
+          Es útil para cambios rápidos, pero no se recomienda para proyectos grandes porque mezcla estructura y estilo,
+          lo que dificulta el mantenimiento.
+        </aside>
+      </section>
+
+
+
+      <!-- Semantics -->
+      <section>
+        <h1>Semantics</h1>
+        <p>Aka: Naming stuff.</p>
+        <aside class="notes">
+          En esta sección vamos a hablar de la importancia de nombrar correctamente las cosas, lo que en programación se
+          llama "semántica".
+          Ponerle nombres significativos a clases y elementos nos ayuda a que el código sea más legible, mantenible y
+          reutilizable.
+        </aside>
+
+      </section>
+      <section>
+        <h3>What would you label this?</h3>
+        <div class="c-grid">
+          <div>
+            <img src="images/toy-box.jpg">
+          </div>
+          <div>
+            <ul>
+              <li class="fragment">"big"</li>
+              <li class="fragment">"box"</li>
+              <li class="fragment">"white"</li>
+              <li class="fragment">"100cms"</li>
+              <li class="fragment" style="color: green">"toys"</li>
+            </ul>
+          </div>
+        </div>
+        <aside class="notes">
+          Aquí el objetivo es mostrar cómo un mismo objeto puede ser descrito de muchas formas: su tamaño, color, forma
+          o función.
+          Pero la opción más útil y clara suele ser la que describe qué es realmente — en este caso, una caja de
+          juguetes.
+          Lo mismo aplica en CSS: nuestras clases deben reflejar el propósito, no solo el estilo visual.
+        </aside>
+
+      </section>
+
+      <section>
+        <h3>What would you label this?</h3>
+        <blockquote class="important_quote">There are only two hard things in computer science: cache invalidation, and
+          naming things. -Phil Carlton</blockquote>
+        <aside class="notes">
+          "Solo hay dos cosas difíciles en la informática: la invalidación de caché y ponerle nombre a las cosas."
+          — Phil Carlton
+          Esta cita famosa nos recuerda que una de las tareas más difíciles en programación es nombrar cosas
+          correctamente.
+          El nombre que elijamos tiene un gran impacto en la comprensión del código por parte de otros desarrolladores…
+          ¡o de nosotros mismos en el futuro!
+        </aside>
+
+      </section>
+
+      <section>
+        <h3>NO.</h3>
+        <pre><code class="css">
 .floatRight {
    float: right
 }
@@ -775,637 +1313,338 @@ h1 {
    width: 38%
 }
           </code></pre>
-        </section>
+        <aside class="notes">
+          Este es un ejemplo de malas prácticas al nombrar clases.
+          Usar nombres como "floatRight" o "Height200Px" hace que el código sea confuso, especialmente cuando el estilo
+          cambia y el nombre ya no representa la realidad.
+          Además, algunos nombres incluso son incorrectos respecto al estilo que aplican, lo cual puede generar errores
+          difíciles de encontrar.
+        </aside>
 
-        <section>
-          <p>Name it what it <strong>IS</strong> not what it looks like.</p>
-        </section>
-        
+      </section>
 
-<!-- methodologies -->
-        <section>
-          <h1>CSS Methodologies</h1>
-        </section>
-        <section>
-          <h3>Problems With Traditional CSS development</h3>
-          <ul>
-            <li class="fragment">Specificity issues</li>
-            <li class="fragment">Difficult to locate styles</li>
-            <li class="fragment">Poor Context (What will break if this is modified?)</li>
-            <li class="fragment">Difficult to maintain consistency</li>
-          </ul>
-        </section>
+      <section>
+        <p>Name it what it <strong>IS</strong> not what it looks like.</p>
+        <aside class="notes">
+          El mensaje clave es: nombra los elementos por lo que <strong>son</strong>, no por cómo <strong>se
+            ven</strong>.
+          En lugar de llamar a una clase "azulGrande", podríamos llamarla "botónPrimario" si es su función dentro del
+          sistema.
+        </aside>
 
-  <!-- IT CSS -->
-        <section>
-					<h1>IT CSS</h1>
-					<p>"Inverted Triangle" CSS</p>
-					<p>Solves the problem of <i>specificity.</i></p>
-        </section>
-        
-        <section>
-					<h2>Inverted Triangle CSS<h2>
-					<img src="images/it-css.png" alt="IT CSS">
-					<small>From CSSWizardry (Harry Roberts) @itcss</small>
-				</section>
+      </section>
 
-				<section>
-					<img src="images/normal-specificity.png" alt="Normal Specificity">
-					<p>Normal CSS Specificity</p>
-					<small>From @csswizardry (Harry Roberts)</small>
-				</section>
 
-				<section>
-					<img src="images/it-specificity.png" alt="Normal Specificity">
-					<p>IT CSS Specificity</p>
-					<small>From @csswizardry (Harry Roberts)</small>
-				</section>
+      <!-- Preprocessors -->
+      <section>
+        <h1>Preprocessors</h1>
+        <aside class="notes">
+          Hoy vamos a hablar de los preprocesadores de CSS. Estas herramientas nos permiten escribir estilos de una
+          forma mucho más eficiente, reutilizable y mantenible. Aunque CSS ha mejorado mucho, los preprocesadores siguen
+          siendo muy usados en proyectos grandes.
+        </aside>
+      </section>
 
-				<section>
-					<h3>How to structure CSS:</h3>
-					<ul>
-						<li class="fragment">Elements & Vertical-Rhythm selectors</li>
-						<li class="fragment">General Classes (80% + of code is here)</li>
-						<li class="fragment">Specific style overrides</li>
-						<li class="fragment">Media Query Overrides</li>
-					</ul>
-        </section>
-        
-  <!-- BEM --->
-				<section>
-					<h1>BEM</h1>
-					<h3>Block | Element | Modifier</h3>
-					<p>Solves the problems of Specificity, Context, &amp; Consistency</p>
-				</section>
+      <section>
+        <h2>What is it?</h2>
+        <p class="fragment">Write CSS more like "real" code</p>
+        <aside class="notes">
+          Entonces, ¿qué es un preprocesador? Básicamente es una herramienta que convierte un código que escribimos en
+          una sintaxis especial a CSS puro. Lo interesante es que nos permite escribir CSS como si fuera un lenguaje de
+          programación real: con variables, funciones, condicionales y otras estructuras avanzadas.
+        </aside>
+      </section>
 
-        <section>
-          <h2>Block</h2>
-          <p>The name of the component block.</p>
-          <div><code class="il">.card</code></div>
-        </section>
+      <section>
+        <h2>Popular Preprocessors</h2>
+        <ul>
+          <li>Less</li>
+          <li>Sass</li>
+          <li>Stylus</li>
+          <li>Post CSS (technically a post-procesor)</li>
+        </ul>
+        <aside class="notes">
+          Aquí vemos algunos de los preprocesadores más conocidos. Sass y Less fueron de los primeros en volverse
+          populares. Stylus también tiene su comunidad. Y aunque PostCSS no es un preprocesador en sentido estricto,
+          cumple una función similar permitiendo transformar CSS con plugins.
+        </aside>
+      </section>
 
-        <section>
-          <h2>__Element</h2>
-          <p>An element inside of our block</p>
-          <p>Delineated by: <code class="il">__</code></p>
-          <div><code class="il">card__title</code></div>
-          <div><code class="il">card__content</code></div>
-        </section>
+      <section>
+        <h2>What can it do for me?</h2>
+        <aside class="notes">
+          Ahora que sabemos qué son, la gran pregunta es: ¿qué pueden hacer por mí? Veamos algunos ejemplos concretos de
+          cómo los preprocesadores pueden simplificar nuestro trabajo como desarrolladores front-end.
+        </aside>
+      </section>
 
-        <section>
-          <h2>--Modifier</h2>
-          <p>a change from the default to a block or element</p>
-          <p>Delineated by: <code class="il">--</code></p>
-          <div><code class="il">card--large</code></div>
-          <div><code class="il">card__title--danger</code></div>
-        </section>
-
-        <section>
-          <h3>Example</h3>
-        
+      <section>
+        <h3>Use Variables</h3>
+        <div class="c-grid">
           <div>
-            HTML:
-            <pre><code class="html">
-<div class="card">
-  <h1 class="card__title card__title--light">A Card</h1>
-  <div class="card__content">Some content</div>
-</div>
+            Stylus:
+            <pre><code class="css">
+      site.border := 1px solid #ccc
+      
+      .table {
+        border: site.border;
+      }
+      .card {
+        border: site.border;
+      }
             </code></pre>
           </div>
-        </section>
-        <section>
-          <h3>Rendered CSS</h3>
-          <p>(IT CSS :thumbsup:)</p>
-          <pre><code class="css">
-.card {
-  border: 1px solid #ccc;
-}
-.card__title {
-  display: block;
-  background: #008000;
-}
-.card__title--light {
-  background: #ccc;
-}
-.card__content {
-  padding: 10px;
-}
-.card--danger {
-  background: #f00;
-}
-          </code></pre>
-        </section>
+          <div>
+            CSS:
+            <pre><code class="css">
+      .table {
+        border: 1px solid #cccccc;
+      }
+      .card {
+        border: 1px solid #cccccc;
+      }
+            </code></pre>
+          </div>
+        </div>
+        <aside class="notes">
+          Aquí tenemos un ejemplo donde Stylus nos permite definir una variable para un borde, y reutilizarla en varios
+          elementos. En CSS puro, tendríamos que repetir ese valor manualmente en cada selector. Esto no solo ahorra
+          tiempo, sino que también evita errores y facilita el mantenimiento.
+        </aside>
+      </section>
+
+      <section>
+        <h3>Not Strict about syntax</h3>
+        <div class="c-grid">
+          <div>
+            Stylus:
+            <pre><code class="css">
+      .test {
+        color: green
+      }
+      
+      .test
+        color green
+      
+      .test
+        color: green;
+      /* etc.. */
+            </code></pre>
+          </div>
+          <div>
+            CSS:
+            <pre><code class="css">
+      .test {
+        color: green;
+      }
+      .test {
+        color: green;
+      }
+      .test {
+        color: green;
+      }
+            </code></pre>
+          </div>
+        </div>
+        <aside class="notes">
+          Otra ventaja es la flexibilidad en la sintaxis. En Stylus, por ejemplo, podemos omitir llaves, puntos y coma,
+          o incluso los dos puntos. Esto nos permite escribir de forma más rápida y limpia si lo preferimos. En CSS,
+          como ven, todo tiene que estar estrictamente definido.
+        </aside>
+      </section>
+
+      <section>
+        <h3>Nest Selectors</h3>
+        <div class="c-grid">
+          <div>
+            Stylus:
+            <pre><code class="css">
+      .parent-class {
+        color: blue;
+      
+        .child-class {
+          color: green;
+        }
+      }
+            </code></pre>
+          </div>
+          <div>
+            CSS:
+            <pre><code class="css">
+      .parent-class {
+        color: blue;
+      }
+      .parent-class .child-class {
+        color: green;
+      }
+            </code></pre>
+          </div>
+        </div>
+        <aside class="notes">
+          Finalmente, una de las características más útiles: la anidación de selectores. En Stylus, podemos anidar una
+          clase dentro de otra para reflejar mejor la jerarquía del HTML. Esto hace que el código sea más legible y más
+          fácil de mantener. En CSS tradicional, como ven, tenemos que repetir el selector padre cada vez.
+        </aside>
+      </section>
 
 
-				<!-- @todo: gotta actually put some real info in here for preso in june --->
-				<section>
-					<h3>What are BEM's Benefits?</h3>
+      <section>
+        <h3>And more!</h3>
+        <ul>
+          <li>Functions</li>
+          <li>Looping</li>
+          <li>Interpolation</li>
+          <li>Inlining Images</li>
+        </ul>
+
+        <aside class="notes">
+          Hasta ahora vimos algunas de las funcionalidades más comunes de los preprocesadores, pero todavía hay más.
+
+          Por ejemplo, también podemos usar funciones personalizadas o nativas para realizar operaciones como cálculos
+          de colores, tamaños o unidades, lo que facilita mucho trabajar con diseños dinámicos.
+
+          También podemos hacer loops, es decir, repetir bloques de estilos con diferentes valores, ideal cuando
+          trabajamos con patrones o componentes repetitivos.
+
+          La interpolación nos permite construir selectores y nombres de propiedades dinámicamente, algo que no
+          podríamos hacer en CSS normal.
+
+          Y finalmente, algo muy práctico en ciertos proyectos: podemos incrustar imágenes directamente en el CSS usando
+          base64. Esto es útil cuando queremos reducir el número de requests al servidor.
+
+          Así que como ven, los preprocesadores no solo hacen que escribir CSS sea más cómodo, sino que también nos
+          permiten automatizar y escalar mucho mejor el código de estilos en proyectos grandes.
+        </aside>
+
+      </section>
+
+
+
+
+
+
+
+      <section>
+        <h3>Live coding!</h3>
+        <img src="images/also-live-dangerously.jpg" alt="i also like to live dangerously"><br>
+        <a href="http://localhost:8282" target="_blank">Example!</a>
+        <aside class="notes">
           <ul>
-            <li class="fragment">Avoids Nesting (single-level specificity)</li>
-            <li class="fragment">Clear picture of what CSS & HTML are doing</li>
-            <li class="fragment">Clearly delineates components</li>
-            <li class="fragment">Not locked in to specific elements for styling</li>
-            <li class="fragment">Scales marvelously</li>
+            <li>show selectors in action</li>
+            <li>show "--secondary" override, & show in computed</li>
+            <li>cover em, rem, vw/vh</li>
+            <li>show sourcemaps</li>
+            <li>hover state toggling</li>
           </ul>
-        </section>
-        
-<!-- Preprocessors -->
-        <section>
-          <h1>Preprocessors</h1>
-        </section>
+        </aside>
+      </section>
+      <!-- final slides -->
+      <section>
+        <h1>More Reading</h1>
+      </section>
+      <section>
+        <h2>Methodologies</h2>
+        <ul class="spaced-out">
+          <li><b>SMACSS</b> - How to structure css to make it scale well</li>
+          <li><b>Namespacing</b> - How to write css classes to make them understandable for developers</li>
+          <li><b>OOCSS</b> - bringing object-oriented approaches into CSS</li>
 
-        <section>
-          <h2>What is it?</h2>
-          <p class="fragment">Write CSS more like "real" code</p>
-        </section>
+        </ul>
+      </section>
 
-        <section>
-          <h2>Popular Preprocessors</h2>
-          <ul>
-            <li>Less</li>
-            <li>Sass</li>
-            <li>Stylus</li>
-            <li>Post CSS (technically a post-procesor)</li>
-          </ul>
-        </section>
+      <section>
+        <h2>Google this!</h2>
+        <ul class="spaced-out">
+          <li><code class="il">:before </code>& <code class="il">:after</code> pseudo elements</li>
+          <li><code class="il">calc()</code></li>
+          <li><code class="il">currentColor</code></li>
+          <li>lobotomized owl selector <code class="il">* + *</code></li>
+          <li>Flexbox & Grid</li>
+          <li>Mobile-First - writing code mobile-friendly</li>
+        </ul>
+        <aside class="notes">
+          Esta diapositiva es una invitación a seguir aprendiendo por cuenta propia.
 
-        <section>
-          <h2>What can it do for me?</h2>
-        </section>
+          Aquí hay una lista de temas y conceptos súper útiles en CSS que vale la pena investigar más a fondo. No vamos
+          a entrar en detalle ahora, pero definitivamente deberían estar en su radar.
 
-        <section>
-          <h3>Use Variables</h3>
-          <div class="c-grid">
-            <div>
-              Stylus:
-              <pre><code class="css">
-site.border := 1px solid #ccc
+          Por ejemplo, los pseudo-elementos <code>:before</code> y <code>:after</code> permiten insertar contenido
+          visual sin necesidad de modificar el HTML. Muy útiles para decoraciones, íconos o trucos de diseño.
 
-.table {
-  border: site.border;
-}
-.card {
-  border: site.border;
-}
-              </code></pre>
-            </div>
-            <div>
-              CSS:
-              <pre><code class="css">
-.table {
-  border: 1px solid #cccccc;
-}
-.card {
-  border: 1px solid #cccccc;
-}
-              </code></pre>
-            </div>
-          </div>
-        </section>
+          La función <code>calc()</code> es una joya que permite hacer cálculos matemáticos directamente en CSS. Es muy
+          útil cuando queremos combinar unidades relativas y absolutas, por ejemplo.
 
-        <section>
-          <h3>Not Strict about syntax</h3>
-          <div class="c-grid">
-            <div>
-              Stylus:
-              <pre><code class="css">
-.test {
-  color: green
-}
+          <code>currentColor</code> es una palabra clave que hereda el color del texto actual y puede usarse para
+          bordes, sombras y más, manteniendo coherencia en el diseño.
 
-.test
-  color green
+          El selector conocido como "lobotomized owl" —escrito como <code>* + *</code>— aplica estilos a todos los
+          elementos hermanos que no son el primero. Es útil para espaciado consistente entre elementos sin necesidad de
+          agregar clases a cada uno.
 
-.test
-  color: green;
-/* etc.. */
-              </code></pre>
-            </div>
-            <div>
-              CSS:
-              <pre><code class="css">
-.test {
-  color: green;
-}
-.test {
-  color: green;
-}
-.test {
-  color: green;
-}
-              </code></pre>
-            </div>
-          </div>
-        </section>
+          También, si aún no lo han hecho, es fundamental que estudien bien Flexbox y Grid. Son sistemas de layout
+          modernos y poderosos que resuelven problemas que antes eran muy complicados.
 
-        <section>
-          <h3>Nest Selectors</h3>
-          <div class="c-grid">
-            <div>
-              Stylus:
-              <pre><code class="css">
-.parent-class {
-  color: blue;
+          Y por último, el enfoque "Mobile-First" nos recuerda que debemos diseñar pensando primero en dispositivos
+          móviles. No es solo un cambio de orden en el código, sino un cambio de mentalidad que nos ayuda a crear
+          interfaces más accesibles y eficientes.
 
-  .child-class {
-    color: green;
-  }
-}
-              </code></pre>
-            </div>
-            <div>
-              CSS:
-              <pre><code class="css">
-.parent-class {
-  color: blue;
-}
-.parent-class .child-class {
-  color: green;
-}
-              </code></pre>
-            </div>
-          </div>
-        </section>
-<!-- 
-        <section>
-          <h3>Nesting & Concatenation</h3>
-          <p>Understand the ampersand!</p>
-          <p><code class="il">&</code> == direct parent selector</p>
-        </section>
+          Así que cuando tengan tiempo, busquen estos términos, hagan pruebas, y sigan explorando. Es la mejor forma de
+          dominar CSS.
+        </aside>
 
-
-        <section>
-          <h3>Nesting & Concatenation</h3>
-          <p>Understand the ampersand!</p>
-          <div class="c-grid">
-            <div>
-              Stylus:
-              <pre><code class="css">
-.card
-  background: green
-
-  &__title
-    font-size: 2em;
-              </code></pre>
-            </div>
-            <div>
-              CSS:
-              <pre><code class="css">
-.card {
-  background: green;
-}
-.card__title {
-  font-size: 2em;
-}
-              </code></pre>
-            </div>
-          </div>
-        </section>
-
-
-        <section>
-          <h3>Nesting & Concatenation</h3>
-          <p>Understand the ampersand!</p>
-          <div class="c-grid">
-            <div>
-              Stylus:
-              <pre><code class="css">
-.card
-  background: green
-
-  .has-overlay &
-    opacity: 0;
-              </code></pre>
-            </div>
-            <div>
-              CSS:
-              <pre><code class="css">
-.card {
-  background: green;
-}
-.has-overlay .card {
-  opacity: 0;
-}
-              </code></pre>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h3>Nesting & Concatenation</h3>
-          <p>Understand the ampersand!</p>
-          <div class="c-grid">
-            <div>
-              Stylus:
-              <pre><code class="css">
-.card
-  background: green
-
-  & + &
-    margin-right: 0.5em;
-              </code></pre>
-            </div>
-            <div>
-              CSS:
-              <pre><code class="css">
-.card {
-  background: green;
-}
-.card + .card {
-  margin-right: 0.5em;
-}
-              </code></pre>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h3>Pro-Tip</h3>
-          <p>Don't over-ampersand!</p>
-          <div class="c-grid">
-            <div>
-              Stylus:
-              <pre><code class="css">
-.card
-  background: green
-
-  &__title
-    font-size: 2em;
-    
-    &__username
-      display: block;
-    
-      &--secondary
-        color: #ccc;
-              </code></pre>
-            </div>
-            <div>
-              CSS:
-              <pre><code class="css">
-.card {
-  background: green;
-}
-.card__title {
-  font-size: 2em;
-}
-.card__title__username {
-  display: block;
-}
-.card__title__username--secondary {
-  color: #ccc;
-}
-              </code></pre>
-            </div>
-          </div>
-        </section>
-        <section>
-          <h2>And More...</h2>
-        </section> -->
-
-        <section>
-          <h3>Auto-Prefixing</h3>
-          <div class="c-grid">
-            <div>
-              Stylus:
-              <pre><code class="css">
-.chicken
-  display: flex
-  flex-flow: row wrap
-  justify-content: space-between
-  align-items: stretch
-              </code></pre>
-            </div>
-            <div>
-              CSS:
-              <pre><code class="css">
-.chicken {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-flex-basis: 100%;
-  -ms-flex-preferred-size: 100%;
-}
-              </code></pre>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h3>And more!</h3>
-          <ul>
-            <li>Functions</li>
-            <li>Looping</li>
-            <li>Interpolation</li>
-            <li>Inlining Images</li>
-          </ul>
-        </section>
-        
-        <!-- <section>
-          <h3>Mixins</h3>
-          <div class="c-grid">
-            <div>
-              Stylus:
-              <pre><code class="css">
-.test
-  +simplified_bem()
-    color: green
-
-
-              </code></pre>
-            </div>
-            <div>
-              CSS:
-              <pre><code class="css">
-.test,
-[class^='test--'],
-[class*=' test--'] {
-  color: green;
-}
-              </code></pre>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h3>Functions</h3>
-          <div class="c-grid">
-            <div>
-              Stylus:
-              <pre><code class="css">
-.test
-  color: get-color('primary')
-              </code></pre>
-            </div>
-            <div>
-              CSS:
-              <pre><code class="css">
-.test{
-  color: #fce3cf;
-}
-              </code></pre>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h3>Looping & Interpolation</h3>
-          <div class="c-grid">
-            <div>
-              Stylus:
-              <pre><code class="css">
-table
-  for row in 1 2 3
-    tr:nth-child({row})
-      height: 10px * row
-              </code></pre>
-            </div>
-            <div>
-              CSS:
-              <pre><code class="css">
-table tr:nth-child(1) {
-  height: 10px;
-}
-table tr:nth-child(2) {
-  height: 20px;
-}
-table tr:nth-child(3) {
-  height: 30px;
-}
-              </code></pre>
-            </div>
-          </div>
-        </section> -->
-        <section>
-          <h2>Don't forget to add sourcemaps!</h2>
-        </section>
+      </section>
 
 
 
-<!-- Pro-Tips -->
-        <!-- <section>
-          <h1>Pro-Tips!</h1>
-        </section>
-
-        <section>
-          <h2>Units Of Measure</h2>
-          <p>We all know <code class="il">px</code>, but...</p>
-        </section>
-        <section>
-          <h3><code class="il">em</code></h3>
-          <p class="fragment">Sized based on element's font-size</p>
-        </section>
-        <section>
-          <h3><code class="il">rem</code></h3>
-          <p class="fragment"><b>Root em</b>: Sized based on <b>HTML's</b> font-size</p>
-        </section>
-        <section>
-          <h3><code class="il">vw/vh</code></h3>
-          <p class="fragment">100 == full current width/height of <b>viewport</b></p>
-        </section>
- -->
-
-
-        <section>
-          <h3>Live coding!</h3>
-          <img src="images/also-live-dangerously.jpg" alt="i also like to live dangerously"><br>
-          <a href="http://localhost:8282" target="_blank">Example!</a>
-          <aside class="notes">
-            <ul>
-              <li>show selectors in action</li>
-              <li>show "--secondary" override, & show in computed</li>
-              <li>cover em, rem, vw/vh</li>
-              <li>show sourcemaps</li>
-              <li>hover state toggling</li>
-            </ul>
-          </aside>
-        </section>
-<!-- final slides -->
-        <section>
-          <h1>More Reading</h1>
-        </section>
-        <section>
-          <h2>Methodologies</h2>
-          <ul class="spaced-out">
-            <li><b>SMACSS</b> - How to structure css to make it scale well</li>
-            <li><b>Namespacing</b> - How to write css classes to make them understandable for developers</li>
-            <li><b>OOCSS</b> - bringing object-oriented approaches into CSS</li>
-            <li><b>Mobile-First</b> - writing code mobile-friendly</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Google this!</h2>
-          <ul class="spaced-out">
-            <li><code class="il">:before </code>& <code class="il">:after</code> pseudo elements</li>
-            <li><code class="il">calc()</code></li>
-            <li><code class="il">currentColor</code></li>
-            <li>lobotomized owl selector <code class="il">* + *</code></li>
-            <li>Flexbox & Grid</li>
-          </ul>
-        </section>
-
-        <!-- <section class="inmar">
-          <div class="c-grid">
-            <div>
-              <img src="images/inmar/logo.png" alt="inmar">
-              <h4>Intelligent Commerce</h4>
-              <p>Billions transactions and shopper engagements flow through our systems. For over 35 years, Inmar has been the leader in North America for managing promotional dollars, loyalty and shopper engagement; logistics and supply chain; and healthcare and pharmaceuticals.</p>
-              <p>We employ the best engineers across North America and the world to work on rich web and mobile applications, big data and real-time analytics, embedded and RF logistics for supply chain and warehouses, and more. If you think you have what it takes, apply to join the team!</p>
-            </div>
-            <div alt="intentionally blank for bg to appear">
-            </div>
-          </div>
-        </section> -->
-
-        <section>
-          <h1>Questions?</h1>
-          <p>Twitter/Github:</p>
-          <p>@mistersender</p>
-        </section>
-
-      </div>
+      <section>
+        <h1>Questions?</h1>
+        <p>laura.ramos@udea.edu.co</p>
+        <h2>References</h2>
+        <ul>
+          <li>
+            <a href="https://github.com/mistersender/css_crash_course_presentation" target="_blank">
+              CSS Crash Course Presentation – GitHub Repository
+            </a>
+          </li>
+        </ul>
+        <aside class="notes">
+          This is the GitHub repository where this presentation was originally published. You can find the source code,
+          examples, and slides there if you'd like to explore further or adapt it for your own use.
+        </aside>
+      </section>
 
     </div>
 
-    <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.js"></script>
+  </div>
 
-    <script>
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
 
-      // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
-      Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
+  <script>
 
-        transition: 'slide', // none/fade/slide/convex/concave/zoom
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'plugin/zoom-js/zoom.js', async: true },
-          { src: 'plugin/notes/notes.js', async: true }
-        ]
-      });
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-    </script>
+      // Optional reveal.js plugins
+      dependencies: [
+        { src: 'lib/js/classList.js', condition: function () { return !document.body.classList } },
+        { src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]') } },
+        { src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]') } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad() } },
+        { src: 'plugin/zoom-js/zoom.js', async: true },
+        { src: 'plugin/notes/notes.js', async: true }
+      ]
+    });
 
-  </body>
+  </script>
+
+</body>
+
 </html>
