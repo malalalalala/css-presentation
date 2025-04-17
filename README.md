@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>README – CSS Crash Course</title>
-  <style>
-    body{font-family:sans-serif;line-height:1.5;margin:2rem auto;max-width:800px}
-    code,pre{background:#f5f5f5;padding:.25rem .5rem;border-radius:4px}
-    pre{overflow-x:auto}
-    h1,h2,h3{color:#333;margin-top:2.2rem}
-    ul{margin:0 0 1.25rem 1.5rem}
-    a{color:#0366d6;text-decoration:none}
-    table{border-collapse:collapse;margin-bottom:1.5rem}
-    td{padding:.4rem .8rem;border:1px solid #ddd}
-  </style>
-</head>
-<body>
-
-<h1>CSS Crash Course</h1>
+<h1>CSS Presentation</h1>
 <p>
   Interactive presentation covering CSS fundamentals with <strong>Reveal.js</strong>.
   Perfect for newcomers who want to grasp syntax, the cascade, and best‑practice
