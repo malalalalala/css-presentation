@@ -1,43 +1,100 @@
-# CSS Crash Course Presentation
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>README – CSS Crash Course</title>
+  <style>
+    body{font-family:sans-serif;line-height:1.5;margin:2rem auto;max-width:800px}
+    code,pre{background:#f5f5f5;padding:.25rem .5rem;border-radius:4px}
+    pre{overflow-x:auto}
+    h1,h2,h3{color:#333;margin-top:2.2rem}
+    ul{margin:0 0 1.25rem 1.5rem}
+    a{color:#0366d6;text-decoration:none}
+    table{border-collapse:collapse;margin-bottom:1.5rem}
+    td{padding:.4rem .8rem;border:1px solid #ddd}
+  </style>
+</head>
+<body>
 
-This class is intended for a complete novice to CSS, or those who know enough to get by, but hate everything about it. We will be covering the the basics of CSS (including specificity), using preprocessors, as well as several practical best practices to keep you out of CSS hell.
+<h1>CSS Crash Course</h1>
+<p>
+  Interactive presentation covering CSS fundamentals with <strong>Reveal.js</strong>.
+  Perfect for newcomers who want to grasp syntax, the cascade, and best‑practice
+  organisation of styles.
+</p>
 
-This is essentially a merging of the "css fundamentals" and "css intermediate" presentations, taking the best bits of both.
+<h2>Contents</h2>
+<ul>
+  <li>Basic syntax and definitions</li>
+  <li>The cascade &amp; specificity</li>
+  <li>Semantic class naming</li>
+  <li>Organisation methodologies (BEM, SMACSS, OOCSS)</li>
+  <li>Pre‑processors (Sass, Less, Stylus, PostCSS)</li>
+  <li>Key topics for further study</li>
+</ul>
 
+<h2>Project layout</h2>
+<pre><code>.
+├── index.html          Main presentation file
+├── css/                Reveal themes &amp; custom styles
+├── js/                 Reveal.js library
+├── lib/                Extra deps (highlight.js, html5shiv…)
+├── images/             Graphics used in the slides
+└── README.html         This document
+</code></pre>
 
-## Covering
+<h2>Run locally</h2>
+<ol>
+  <li><strong>Clone</strong> the repo:<br>
+    <code>git clone https://github.com/your‑user/css‑crash‑course.git</code></li>
+  <li><strong>Enter</strong> the folder:<br>
+    <code>cd css‑crash‑course</code></li>
+  <li><strong>Start</strong> a static server (pick one):<br>
+    <ul>
+      <li>Python 3:<br><code>python -m http.server 8282</code></li>
+      <li>Node + http‑server:<br><code>npm i -g http-server && http-server -p 8282</code></li>
+    </ul>
+  </li>
+  <li>Visit <code>http://localhost:8282/index.html</code> and navigate with the arrow keys.</li>
+</ol>
 
-* Syntax & Definitions
-* The Cascade & Specificity
-* Semantic CSS
-* CSS Methodologies:
-  * ITCSS
-  * BEM
-* Preprocessors (Stylus)
-* Pro Tips
-  * Units of Measure
-  * Box Model
-* Dev Tools
-  * show general inspector
-    * arrow keys on numbers (command + 100, option + .1, shift + 10)
-  * box model inspector
-  * toggle on/off hover states
-  * show computed inspector
-  * show inspecting using sourcemaps
-  * Some fancy css
-    * show the rems by changing the html font size
+<h2>Export to PDF</h2>
+<p>
+  Append <code>?print-pdf</code> to the URL:<br>
+  <code>http://localhost:8282/index.html?print-pdf</code><br>
+  then use <em>Print → Save as PDF</em>. Reveal.js auto‑loads the print stylesheet.
+</p>
 
-* More Reading:
-  * Methodologies:
-    * SMACSS - How to structure css to make it scale well
-    * Namespacing - How to write css classes to make them understandable for developers
-    * OOCSS - bringing object-oriented approaches into CSS
-    * Mobile-First
-  * Useful:
-    * Flexbox (& grid, if you don't need ie11!)
-    * Lea Verou's Book
-  * More Pro Tips:
-    * `:before `& `:after` pseudo elements
-    * `calc()`
-    * `currentColor`
-    * lobotomized owl selector
+<h2>Quick customisation</h2>
+<table>
+  <tr><td><strong>Colour theme</strong></td><td><code>css/simple.css</code> or swap the theme link in <code>index.html</code></td></tr>
+  <tr><td><strong>Your own styles</strong></td><td><code>css/custom.css</code></td></tr>
+  <tr><td><strong>Plugins / transitions</strong></td><td>Block <code>Reveal.initialize</code> in <code>index.html</code></td></tr>
+  <tr><td><strong>Images &amp; GIFs</strong></td><td><code>images/</code> folder</td></tr>
+  <tr><td><strong>Slide content</strong></td><td><code>&lt;section&gt;</code> elements in <code>index.html</code></td></tr>
+</table>
+
+<h2>Main dependencies</h2>
+<ul>
+  <li><strong>Reveal.js</strong> — HTML slide engine (MIT)</li>
+  <li><strong>highlight.js</strong> — Code syntax highlighting (BSD‑3)</li>
+  <li><strong>html5shiv</strong> — HTML5 support for IE &lt; 9 (MIT)</li>
+</ul>
+
+<h2>Authors</h2>
+<ul>
+  <li>Original presentation: <strong>Jessica Keener</strong></li>
+  <li>Spanish adaptation &amp; notes: <strong>Laura Ramos</strong> – laura.ramos@udea.edu.co</li>
+</ul>
+
+<h2>Licence</h2>
+<p>
+  Released under the <strong>MIT Licence</strong>.  
+  Feel free to use, modify and share as long as you keep this notice.
+</p>
+
+<hr>
+<p style="text-align:center">Enjoy learning CSS! For questions or suggestions, open an issue or drop an email.</p>
+
+</body>
+</html>
